@@ -1,6 +1,5 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
-import pickle
 import phonenumbers
 from phonenumbers import geocoder
 from phonenumbers import carrier
@@ -14,8 +13,8 @@ def home():
 
 @app.route('/predict',methods=['POST'])
 def predict():
-    print("aaa")
-    print(request.form.get("Phone"))
+    
+    
     number = request.form.get("Phone")
     ch_nmber = phonenumbers.parse(number, "CH")
     service_nmber = phonenumbers.parse(number, "RO")
